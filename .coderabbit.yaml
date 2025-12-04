@@ -1,0 +1,50 @@
+version: 1
+
+# Global language and style
+language: en
+
+review:
+  enabled: true
+
+  # Only review files under the application code, not dependencies
+  path_includes:
+    - "Notify_C/**"
+
+  path_excludes:
+    - "Notify_C/**/node_modules/**"
+    - "**/.git/**"
+
+  # When CodeRabbit should automatically run on PRs
+  auto_review:
+    on_open: true
+    on_push: true
+    on_update: true
+    on_reopen: true
+    on_ready_for_review: true
+    on_draft_to_ready_for_review: true
+
+  # Summary comment on each PR
+  summary:
+    enabled: true
+    style: concise  # options commonly: concise, detailed (depends on CodeRabbit version)
+
+  # Inline suggestions/comments
+  suggestions:
+    enabled: true
+    max_comments: 40
+
+  # General preferences for feedback
+  focus:
+    - bugs
+    - security
+    - performance
+    - readability
+    - best_practices
+
+  # Optionally, you can downplay nitpicks about style/formatting if your linter handles that
+  style:
+    ignore:
+      - spacing
+      - quotes
+
+
