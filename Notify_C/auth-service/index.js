@@ -22,13 +22,11 @@ app.use((req, _res, next) => {
 
 // Basic health check endpoint for monitoring
 app.get("/health", (_req, res) => {
-  res
-    .status(200)
-    .json({
-      status: "ok",
-      service: "auth-service",
-      time: new Date().toISOString(),
-    });
+  res.status(200).json({
+    status: "ok",
+    service: "auth-service",
+    time: new Date().toISOString(),
+  });
 });
 
 // 3. Database Connection Pool
